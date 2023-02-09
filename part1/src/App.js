@@ -1,6 +1,7 @@
 /*
 1.1: kurssitiedot, step1
 1.2: kurssitiedot, step2
+//kuinka käy
 */
 
 //header for page
