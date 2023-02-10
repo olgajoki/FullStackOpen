@@ -1,7 +1,6 @@
 /*
 1.1: kurssitiedot, step1
 1.2: kurssitiedot, step2
-//kuinka käy
 */
 
 //header for page
@@ -13,17 +12,34 @@ const Header = (props) => {
     </h1>
   )
 }
+// parts and exercises
+const Part = (props) =>{
+
+  return(
+    <p>
+      {props.part1}
+      {props.exercises1}
+      {props.part2}
+      {props.exercises2}
+      {props.part3}
+      {props.exercises3}
+
+    </p>
+  )
+}
+
 //content for page
 const Content = (props) => {
 
-  return( <p>
-    {props.part1}
-    <br></br>
-    {props.part2}
-    <br></br>
-    {props.part3}
-  </p>
+  return( 
+  <div>
+    <Part part1= {props.part1}/>
+    <Part part2= {props.part2}/>
+    <Part part3= {props.part3}/>
+
+  </div>
   )
+
 }
 //total number of exercises
 const Total = (props) => {
@@ -49,7 +65,7 @@ const App = () => {
   return (
     <div>
       <Header course = {course}/>
-      <Content part1 = {part1} part2 = {part2} part3 = {part3}/>
+      <Content part1 = {part1 + " " + exercises1} part2 = {part2 + " " + exercises2 } part3 = {part3 + " " + exercises3}/>
       <Total exercises1 = {exercises1} exercises2 = {exercises2} exercises3 = {exercises3}/>
     </div>
   )
