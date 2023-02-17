@@ -11,26 +11,43 @@ import Content from "./Content"
 
 const Course = ({ course }) => {
 
-const sumArray = [course.parts[0].exercises, course.parts[1].exercises, course.parts[2].exercises];
+    console.log('course', course.parts[0].exercises, 'dwdw')
+    console.log('course', (course.parts).length, 'dwdw')
 
-const initialValue = 0;
-const sumWithInitial = sumArray.reduce(
-  (accumulator, currentValue) => accumulator + currentValue,
-  initialValue
-);
 
-console.log('summa on' , sumWithInitial);
+    //adding exercises to array for creating sum
+    const sumArray = [];
 
+    for(let i = 0; i < (course.parts).length; i++){
+        sumArray.push(course.parts[i].exercises)
+        console.log('array on' , sumArray);
+
+    }
+
+    console.log('sitten' , sumArray);
+
+    const initialValue = 0;
+    const sumWithInitial = (sumArray).reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    initialValue
+    );
+
+    console.log('summa on' , sumWithInitial);
+//course names
     return (
         <div>
-        <h1>{course.name}</h1>
+        <h1>Web development curriculum</h1>
+            <h2>{course.name}</h2>
 
-            {(course.parts).map(course  =>
-                <Content key={course.id}course = {course}/>
-                )}
-        <p><b>total of exercises {sumWithInitial}
-        </b>
-        </p>
+            {(course.parts).map(courseContent  =>
+                <Content key={course.parts.id} courseContent = {courseContent}/>
+                )}    
+        
+            <p><b>total of exercises&nbsp;
+                {sumWithInitial}
+            </b>
+            </p>
+
                 
         </div>
 

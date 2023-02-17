@@ -1,13 +1,38 @@
-import Part from "./Part"
+//course exercises
+const Part = ({ courseContent }) => {
 
-const Content = ({ course}) => {
+    console.log('part', courseContent.exercises)
 
-    console.log('content' , course.exercises)
+    if(courseContent.id !== 0){
+    return (
+        <span>
+            {courseContent.exercises}
+        </span>
+        
+    )
+
+  }
+
+else{
+    return (
+
+        <div>check again</div>
+    )
+}
+}
+//course contents
+const Content = ({ courseContent }) => {
+
+    console.log('content' , courseContent.exercises)
+
+
     return (
         <div>
-            <p>{course.name}&nbsp;
-            <Part key={course.id} course={course}/>
+            <p>{courseContent.name}&nbsp;
+            <Part courseContent = {courseContent}/>
             </p>
+            
+            
 
         </div>
     )

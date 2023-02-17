@@ -1,11 +1,11 @@
-const Part = ({ course }) => {
+const Part = ({ courses }) => {
 
-    console.log('part', course.id)
+    console.log('part', courses.id)
 
-    if(course.id != 0){
+    if(courses.id != 0){
     return (
         <span>
-            {course.exercises}
+            {courses.exercises}
         </span>
     )
   }
